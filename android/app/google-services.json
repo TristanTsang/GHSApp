@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "831823904425",
+    "project_id": "schoolapp-72af1",
+    "storage_bucket": "schoolapp-72af1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831823904425:android:c1bf96edec29176cd7f3b8",
+        "android_client_info": {
+          "package_name": "TristanTsang.school_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831823904425-vhtbcnb6g7um50j0dtk7n16fgrp1ssdo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDge5iLb0fXbRx2xh9HEaIbHE1gOWwuGcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831823904425-vhtbcnb6g7um50j0dtk7n16fgrp1ssdo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
