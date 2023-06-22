@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+import 'package:school_app/appData.dart';
+import 'package:school_app/userData.dart';
 
 class StartScreen extends StatelessWidget {
   StartScreen({Key? key}) : super(key: key);
@@ -94,8 +97,6 @@ class LargeTextButton extends StatelessWidget {
 class LogInScreen extends StatelessWidget {
   final _auth = FirebaseAuth.instance;
   bool isChecked = false;
-  late String email;
-  late String password;
   LogInScreen({Key? key}) : super(key: key);
 
   @override
@@ -127,7 +128,7 @@ class LogInScreen extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 child: TextField(
                     onChanged: (value) {
-                      email = value;
+                      Provider.of<AppData>(context, listen:false).changeEmail(value);
                     },
                     obscureText: false,
                     decoration: InputDecoration(
@@ -142,12 +143,16 @@ class LogInScreen extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 child: TextField(
                     onChanged: (value) {
-                      password = value;
+                      Provider.of<AppData>(context, listen:false).changePassword(value);
                     },
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Password',
                     ))),
+                Text(Provider.of<AppData>(context).signInError,
+                    style: const TextStyle(
+                        color: Colors.red
+                    )),
             SizedBox(height: 30),
             LargeTextButton(
                 text: 'Login',
@@ -155,13 +160,14 @@ class LogInScreen extends StatelessWidget {
                 color: Color(0xff10182b),
                 onPressed: () async {
                   try{
-                    final newUser = await _auth.signInWithEmailAndPassword(email: email!, password: password!);
+                    final newUser = await _auth.signInWithEmailAndPassword(email: Provider.of<AppData>(context, listen: false).getEmail(), password: Provider.of<AppData>(context, listen: false).getPassword());
                     if(newUser!=null){
-                      print("hi");
                       Navigator.pushNamed(context,"MainScreen");
                     }
 
-                  }catch(e){
+                  }on FirebaseAuthException catch(e){
+                    Provider.of<AppData>(context,listen:false).changeSignInError("Invalid email or password! Please try again.");
+                  } catch(e){
                     print(e);
                   }
                 }),
@@ -197,8 +203,8 @@ class LogInScreen extends StatelessWidget {
 class SignUpScreen extends StatelessWidget {
   final _auth = FirebaseAuth.instance;
   bool isChecked = true;
-  late String email;
-  late String password;
+  String? email;
+  String? password;
   SignUpScreen({Key? key}) : super(key: key);
 
   @override
@@ -207,7 +213,7 @@ class SignUpScreen extends StatelessWidget {
       padding:
           EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
@@ -217,12 +223,12 @@ class SignUpScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('Welcome!',
+            const Text('Welcome!',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-            Text('Enter your information to access the app!',
+            const Text('Enter your information to access the app!',
                 style: TextStyle(fontSize: 15, color: Colors.grey)),
-            SizedBox(height: 50),
-            Text('Email*', style: TextStyle(fontSize: 17)),
+            const SizedBox(height: 50),
+            const Text('Email*', style: TextStyle(fontSize: 17)),
             Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -230,14 +236,14 @@ class SignUpScreen extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 child: TextField(
                     onChanged: (value) {
-                      email = value;
+                      Provider.of<AppData>(context, listen:false).changeEmail(value);
                     },
                     obscureText: false,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Email',
                     ))),
             SizedBox(height: 25),
-            Text('Password*', style: TextStyle(fontSize: 17)),
+            const Text('Password*', style: TextStyle(fontSize: 17)),
             Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -245,21 +251,23 @@ class SignUpScreen extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 child: TextField(
                     onChanged: (value) {
-                      password = value;
+                      Provider.of<AppData>(context, listen:false).changePassword(value);
                     },
                     obscureText: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Password',
                     ))),
-            SizedBox(height: 25),
+            Text(Provider.of<AppData>(context).signUpError,
+            style: const TextStyle(
+              color: Colors.red
+            )),
             SizedBox(height: 30),
             LargeTextButton(
                 text: 'Sign up',
                 textColor: Colors.white,
                 color: Colors.deepOrange,
                 onPressed: () async {try{
-                  print(email);
-                  final newUser = await _auth.createUserWithEmailAndPassword(email: email!, password: password!);
+                  final newUser = await _auth.createUserWithEmailAndPassword(email: Provider.of<AppData>(context, listen: false).getEmail(), password: Provider.of<AppData>(context, listen: false).getPassword());
                   if(newUser!=null){
                     Navigator.pushNamed(context,"MainScreen");
                   }
@@ -271,7 +279,7 @@ class SignUpScreen extends StatelessWidget {
             Center(
               child:
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text('Already have an account?',
+                const Text('Already have an account?',
                     style: TextStyle(color: Colors.grey)),
                 TextButton(
                     onPressed: () {
@@ -283,7 +291,7 @@ class SignUpScreen extends StatelessWidget {
                             return LogInScreen();
                           });
                     },
-                    child: Text('Log in!',
+                    child: const Text('Log in!',
                         style: TextStyle(
                             color: Colors.deepOrange,
                             decoration: TextDecoration.underline,

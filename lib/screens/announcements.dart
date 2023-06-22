@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:school_app/appData.dart';
 
-
+//Contains essential information needed to manage and display announcements
 class Announcement {
   late String title;
   late String text;

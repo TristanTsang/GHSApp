@@ -3,10 +3,16 @@ import 'package:school_app/screens/announcements.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 class AppData extends ChangeNotifier {
+  String? email;
+  String? password;
+  String signUpError = "";
+  String signInError = "";
   AppData() {}
+
+
   List<Event> eventArray = [
    Event(
-    description: "Its finally that time of year. Have a great time Juniors and Seniors!",
+    description: "Its finally that time of the year. Have a great time Juniors and Seniors!",
     startTime: DateTime(0,0,0,12,30),
     endTime:DateTime(0,0,0,14,30),
     title:"Prom", eventDate: DateTime(2023,3,21),
@@ -76,6 +82,7 @@ class AppData extends ChangeNotifier {
 
   void addEvent(Event event) {
     eventArray.add(event);
+
   }
 
   List<Announcement> announcementArray = [
@@ -273,6 +280,29 @@ class AppData extends ChangeNotifier {
 
   void addAnnouncement(Announcement announcement) {
     announcementArray.add(announcement);
+    notifyListeners();
+  }
+
+
+  //* UserData *//
+  void changeEmail(String newEmail){
+    email = newEmail;
+    notifyListeners();
+  }
+  void changePassword(String newPassword){
+    password= newPassword;
+    notifyListeners();
+  }
+
+  String getEmail(){
+    return email!;
+  }
+  String getPassword(){
+    return password!;
+  }
+
+  void changeSignInError(String error){
+    signInError = error;
     notifyListeners();
   }
 }

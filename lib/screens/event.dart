@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//Class containing essential information related to Events later used for event widgets and event displays
 class Event {
   late String title;
   late String description;

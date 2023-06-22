@@ -19,10 +19,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Firebase.initializeApp();
     return ChangeNotifierProvider(
       create: (context) => AppData(),
       child: MaterialApp(
-            initialRoute: 'MainScreen',
+            initialRoute: 'StartScreen',
             routes: {
               'StartScreen': (context) => StartScreen(),
               'InboxScreen': (context) => InboxScreen(),
