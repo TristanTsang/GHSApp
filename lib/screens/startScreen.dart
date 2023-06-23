@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:school_app/appData.dart';
-import 'package:school_app/userData.dart';
 
 class StartScreen extends StatelessWidget {
   StartScreen({Key? key}) : super(key: key);
@@ -162,7 +161,7 @@ class LogInScreen extends StatelessWidget {
                   try{
                     final newUser = await _auth.signInWithEmailAndPassword(email: Provider.of<AppData>(context, listen: false).getEmail(), password: Provider.of<AppData>(context, listen: false).getPassword());
                     if(newUser!=null){
-                      Navigator.pushNamed(context,"MainScreen");
+                      Navigator.pushNamedAndRemoveUntil(context,"MainScreen", (_)=> false);
                     }
 
                   }on FirebaseAuthException catch(e){
@@ -269,7 +268,7 @@ class SignUpScreen extends StatelessWidget {
                 onPressed: () async {try{
                   final newUser = await _auth.createUserWithEmailAndPassword(email: Provider.of<AppData>(context, listen: false).getEmail(), password: Provider.of<AppData>(context, listen: false).getPassword());
                   if(newUser!=null){
-                    Navigator.pushNamed(context,"MainScreen");
+                    Navigator.pushNamedAndRemoveUntil(context,"MainScreen", (_)=> false);
                   }
 
                 }catch(e){

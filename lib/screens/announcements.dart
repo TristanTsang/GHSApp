@@ -89,3 +89,4 @@ class AnnouncementScreen extends StatelessWidget {
     );
   }
 }
+

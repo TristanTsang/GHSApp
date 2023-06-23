@@ -1,22 +1,21 @@
+import 'dart:collection';
+
 import 'package:school_app/screens/event.dart';
 import 'package:school_app/screens/announcements.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 class AppData extends ChangeNotifier {
-  String? email;
-  String? password;
-  String signUpError = "";
-  String signInError = "";
-  AppData() {}
+  ///Event Data
 
-
+  //Initial Events
   List<Event> eventArray = [
-   Event(
-    description: "Its finally that time of the year. Have a great time Juniors and Seniors!",
-    startTime: DateTime(0,0,0,12,30),
-    endTime:DateTime(0,0,0,14,30),
-    title:"Prom", eventDate: DateTime(2023,3,21),
-  ),
+    Event(
+      description: "Its finally that time of the year. Have a great time Juniors and Seniors!",
+      startTime: DateTime(0,0,0,12,30),
+      endTime:DateTime(0,0,0,14,30),
+      title:"Prom", eventDate: DateTime(2023,3,21),
+    ),
     Event(
       description: "Professional Work Day. Students have off. Enjoy the time with friends and family, getting rest, or getting ahead with work!",
       startTime: DateTime(0,0,0,12,30),
@@ -79,12 +78,51 @@ class AppData extends ChangeNotifier {
     ),
 
   ];
+  LinkedHashMap<DateTime, List<Event>> eventsMap = LinkedHashMap(
+    equals: isSameDay,
+    hashCode: (DateTime date){
+      return date.day * 1000000 + date.month * 10000 + date.year;
+    },
+  );
+
+
 
   void addEvent(Event event) {
     eventArray.add(event);
+    updateEventMap(eventArray);
+    notifyListeners();
 
   }
 
+  void updateEventMap(List<Event> events){
+    eventsMap.clear();
+    for (Event item in events) {
+      if(eventsMap[item.eventDate] != null){
+        eventsMap[item.eventDate]!.add(item);
+      }else{
+        eventsMap[item.eventDate] = [];
+        eventsMap[item.eventDate]!.add(item);
+      }
+    }
+    notifyListeners();
+  }
+  List<Widget> eventWidgets(List<Event> events){
+    List<Widget> temp = [];
+    for(int i=0; i< events.length;i++){
+      temp.add(EventTile2(event: events[i]));
+    }
+    return temp;
+  }
+  List<Widget> eventWidgetsSpaced(List<Event> events){
+    List<Widget> temp = [];
+    for(int i=0; i< events.length;i++){
+      temp.add(EventTile(event: events[i]));
+      temp.add(SizedBox(width:10));
+    }
+    return temp;
+  }
+
+  /// Announcement Data
   List<Announcement> announcementArray = [
     Announcement(
         date: DateTime(
@@ -233,7 +271,7 @@ class AppData extends ChangeNotifier {
   ];
 
   List<Announcement> recentAnnouncements() {
-    List<Announcement> temp1 = new List<Announcement>.from(announcementArray);
+    List<Announcement> temp1 = List<Announcement>.from(announcementArray);
     List<Announcement> temp2 = [];
     for (int k = 0; k < 3; k++) {
       Announcement mostRecent = temp1[0];
@@ -251,10 +289,8 @@ class AppData extends ChangeNotifier {
     }
     return temp2;
   }
-
   List<Widget> announcementWidgets(List<Announcement> announcements){
     List<Widget> temp = [];
-    print(announcements.length);
     for(int i=0; i< announcements.length;i++){
       temp.add(AnnouncementCard(announcement: announcements[i]));
       temp.add(Divider(thickness:1));
@@ -262,21 +298,7 @@ class AppData extends ChangeNotifier {
     return temp;
   }
 
-  List<Widget> eventWidgets(List<Event> events){
-    List<Widget> temp = [];
-    for(int i=0; i< events.length;i++){
-      temp.add(EventTile2(event: events[i]));
-    }
-    return temp;
-  }
-  List<Widget> eventWidgetsSpaced(List<Event> events){
-    List<Widget> temp = [];
-    for(int i=0; i< events.length;i++){
-      temp.add(EventTile(event: events[i]));
-      temp.add(SizedBox(width:10));
-    }
-    return temp;
-  }
+
 
   void addAnnouncement(Announcement announcement) {
     announcementArray.add(announcement);
@@ -285,6 +307,11 @@ class AppData extends ChangeNotifier {
 
 
   //* UserData *//
+
+  String? email;
+  String? password;
+  String signUpError = "";
+  String signInError = "";
   void changeEmail(String newEmail){
     email = newEmail;
     notifyListeners();
@@ -305,4 +332,5 @@ class AppData extends ChangeNotifier {
     signInError = error;
     notifyListeners();
   }
+
 }

@@ -2,6 +2,8 @@ import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets.dart';
+
 
 class EmailScreen extends StatefulWidget {
   const EmailScreen({Key? key}) : super(key: key);
@@ -26,7 +28,9 @@ class _EmailScreenState extends State<EmailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: myAppBar(),
       appBar: AppBar(
+        leading: null,
         title:Text("Student Absence", style: TextStyle(fontSize: 25, color: Colors.white),),
         backgroundColor: Colors.red[900],
       ),

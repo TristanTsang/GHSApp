@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:school_app/appData.dart';
+import '../widgets.dart';
 class InboxScreen extends StatelessWidget {
   const InboxScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar: myAppBar(),
         appBar: AppBar(
           title:Text("Announcements Inbox", style: TextStyle(fontSize: 25, color: Colors.white),),
           backgroundColor: Colors.red[900],

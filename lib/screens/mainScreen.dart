@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets.dart';
 import 'announcements.dart';
 import 'package:provider/provider.dart';
 import 'event.dart';
@@ -19,41 +20,7 @@ class MainScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.red[900],
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 50,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                padding: EdgeInsets.zero,
-                onPressed: () {Navigator.pushNamed(context, "InboxScreen");},
-                icon: Icon(Icons.inbox, color: Colors.grey[800]),
-              ),
-              IconButton(
-                padding: EdgeInsets.zero,
-                onPressed: () {Navigator.pushNamed(context, "EventsScreen");},
-                icon: Icon(Icons.calendar_month, color: Colors.grey[800]),
-              ),
-              IconButton(
-                padding: EdgeInsets.zero,
-                icon: Icon(Icons.home, color: Colors.red[900], size: 40),
-                onPressed: () {Navigator.popUntil(context, ModalRoute.withName('MainScreen'));},
-              ),
-              IconButton(
-                padding: EdgeInsets.zero,
-                onPressed: () {Navigator.pushNamed(context, ('ImageScreen'));},
-                icon: Icon(Icons.photo_camera, color: Colors.grey[800]),
-              ),
-              IconButton(
-                padding: EdgeInsets.zero,
-                onPressed: () {Navigator.pushNamed(context, ('EmailScreen'));},
-                icon: Icon(Icons.mail, color: Colors.grey[800]),
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: myAppBar(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
