@@ -38,10 +38,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   table_calendar: ^3.0.9
   firebase_core: ^2.14.0
-  cloud_firestore: ^4.8.1
+  cloud_firestore: ^4.8.2
   firebase_auth: ^4.6.3
   provider: ^6.0.5
   flutter_email_sender: ^5.2.0
+  image_picker: ^0.8.9
+  social_share: ^2.3.1
+  path_provider: ^2.0.15
 
 dev_dependencies:
   flutter_test:

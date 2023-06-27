@@ -116,7 +116,7 @@ class EventScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.grey[800],
                 ),
-                width: MediaQuery.of(context).size.width * 0.45,
+                width: MediaQuery.of(context).size.width * 0.95,
                 child: RawMaterialButton(
                   child: Text(
                     "FAQ",
@@ -136,24 +136,7 @@ class EventScreen extends StatelessWidget {
                   },
                 ),
               ),
-              Container(
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.red[900],
-                ),
-                width: MediaQuery.of(context).size.width * 0.45,
-                child: RawMaterialButton(
-                  child: Text(
-                    "Discussion",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  onPressed: () {},
-                ),
-              ),
+              ////Discussion(),
             ],
           ),
         ),
@@ -181,6 +164,34 @@ class EventScreen extends StatelessWidget {
             Text(textAlign: TextAlign.left, "${event.description}"),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Discussion extends StatelessWidget {
+  const Discussion({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: Colors.red[900],
+      ),
+      width: MediaQuery.of(context).size.width * 0.45,
+      child: RawMaterialButton(
+        child: Text(
+          "Discussion",
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.w700),
+        ),
+        onPressed: () {},
       ),
     );
   }

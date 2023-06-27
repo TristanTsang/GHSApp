@@ -45,3 +45,35 @@ class myAppBar extends StatelessWidget {
     );
   }
 }
+
+class LargeTextButton extends StatelessWidget {
+  late String text;
+  late Function onPressed;
+  late Color color;
+  late Color textColor;
+
+  LargeTextButton(
+      {required this.text,
+        required this.onPressed,
+        required this.color,
+        required this.textColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        onPressed();
+      },
+      child: Container(
+        child: Center(
+            child: Text(text,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: textColor))),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height * 0.07,
+        decoration:
+        BoxDecoration(borderRadius: BorderRadius.circular(5), color: color),
+      ),
+    );
+  }
+}
