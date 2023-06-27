@@ -18,7 +18,7 @@ and the community
 - Android Studio - integrated development environment (IDE) for Android application development
 - Dart - programming language developed by Google
 
-## Requirement:
+## Rubric:
 - Packaged with complete file, readme, and instructions
   - The program contains proper instructions and can be easily cloned with the instruction. The ReadMe is very detailed in explaining the program and contains other useful information.
 - Application functionality
