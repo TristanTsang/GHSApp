@@ -2,23 +2,23 @@
 
 FBLA(Future Business Leader Association) Mobile App from Tristan Tsang and Srikar Erigineni at Glenelg High School
 
-# Goal: 
+## Goal: 
 - Develop a mobile app for our designated school that connect parents, school administration, 
 and the community
 
-# Main features:
+## Main features:
 - Easy login page with option to Sign Up
 - Displays School announcements
 - Includes Calendar that contains past and future events with dates
 - Displays School Photos from Events
 - Administrator Messaging for Absences and Bug Reports
 
-# Platform and Language:
+## Platform and Language:
 - Flutter - google's portable UI toolkit for crafting beautiful, natively compiled applications for mobile, web, and desktop from a single codebase
 - Android Studio - integrated development environment (IDE) for Android application development
 - Dart - programming language developed by Google
 
-# Requirement:
+## Requirement:
 - Packaged with complete file, readme, and instructions
   - The program contains proper instructions and can be easily cloned with the instruction. The ReadMe is very detailed in explaining the program and contains other useful information.
 - Application functionality
@@ -41,18 +41,18 @@ and the community
 - Bugs
   - The program does not contain any bugs and is able to run properly without any error. If there is any reason for a bug to appear in our program, users are able to report it in the app which can be seen by school administrators.
 
- # How to Download the App:
+ ## How to Download the App:
 - 
 
- # Resources:
+ ## Resources:
 - 
 
- # Copyright Compliance:
+ ## Copyright Compliance:
 - This program utilizes the Provider class and stock images from DepositPhotos.com
 - The Flutter Provider Class contains State/Data Management under free use MIT listen
 
 
-# Cloning of Project:
+## Cloning of Project:
 - Must download Flutter, and Android Studio Emulator
 
-# Pages
+## Pages
