@@ -1,4 +1,4 @@
-# GHS School App
+# **GHS School App**
 
 FBLA(Future Business Leader Association) Mobile App from Tristan Tsang and Srikar Erigineni at Glenelg High School
 
@@ -44,12 +44,22 @@ and the community
  ## How to Download the App:
 - 
 
- ## Resources:
-- 
+ ## Packages:
+  [cupertino_icons: ^1.0.2](https://pub.dev/packages/cupertino_icons/versions)
+  [table_calendar: ^3.0.9](https://pub.dev/packages/table_calendar)
+  [firebase_core: ^2.14.0](https://pub.dev/packages/firebase_core)
+  [cloud_firestore: ^4.8.2](https://pub.dev/packages/cloud_firestore)
+  [firebase_auth: ^4.6.3](https://pub.dev/packages/firebase_auth)
+  [provider: ^6.0.5](https://pub.dev/packages/provider)
+  [flutter_email_sender: ^5.2.0](https://pub.dev/packages/flutter_email_sender)
+  [image_picker: ^0.8.9](https://pub.dev/packages/image_picker)
+  [social_share: ^2.3.1](https://pub.dev/packages/social_share)
+  [path_provider: ^2.0.15](https://pub.dev/packages/path_provider)
+
 
  ## Copyright Compliance:
-- This program utilizes the Provider class and stock images from DepositPhotos.com
-- The Flutter Provider Class contains State/Data Management under free use MIT listen
+- All Photos and graphics are in the public domain and open to free use.
+- Packages listed along with links to their copyright licesences. All licenses complied with.
 
 
 ## Cloning of Project:
