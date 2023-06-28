@@ -46,15 +46,25 @@ and the community
 
  ## Packages:
   -[cupertino_icons: ^1.0.2](https://pub.dev/packages/cupertino_icons/versions)
+  
   -[table_calendar: ^3.0.9](https://pub.dev/packages/table_calendar)
+  
   -[firebase_core: ^2.14.0](https://pub.dev/packages/firebase_core)
+  
   -[cloud_firestore: ^4.8.2](https://pub.dev/packages/cloud_firestore)
+  
   -[firebase_auth: ^4.6.3](https://pub.dev/packages/firebase_auth)
+  
   -[provider: ^6.0.5](https://pub.dev/packages/provider)
+  
   -[flutter_email_sender: ^5.2.0](https://pub.dev/packages/flutter_email_sender)
+  
   -[image_picker: ^0.8.9](https://pub.dev/packages/image_picker)
+  
   -[social_share: ^2.3.1](https://pub.dev/packages/social_share)
+  
   -[path_provider: ^2.0.15](https://pub.dev/packages/path_provider)
+  
 
 
  ## Copyright Compliance:
