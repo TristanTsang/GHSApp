@@ -43,9 +43,6 @@ and the community
 - Bugs
   - The program does not contain any bugs and is able to run properly without any error. If there is any reason for a bug to appear in our program, users are able to report it in the app which can be seen by school administrators.
 
- ## How to Download the App:
-- 
-
  ## Packages:
   - [cupertino_icons: ^1.0.2](https://pub.dev/packages/cupertino_icons/versions)
   - [table_calendar: ^3.0.9](https://pub.dev/packages/table_calendar)
