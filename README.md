@@ -72,3 +72,5 @@ and the community
 - Planning Process
 - Instructions
 ## Main Pages
+- Google Doc Link for Images
+  - https://docs.google.com/document/d/1kpQf0o1e7XCUrF2RnwhCHL4oJUTxljHpULmnnKhzoDc/edit?usp=sharing
