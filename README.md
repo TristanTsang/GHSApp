@@ -65,8 +65,10 @@ and the community
 - Packages listed along with links to their copyright licesences. All licenses complied with.
 
 
-## Cloning of Project:
-- Must download Flutter, and Android Studio Emulator
+## How To Run and Install:
+- Download and Install the Flutter SDK via the Flutter website
+- Use Android Studio or Visual Studio to launch an Android emulator, Android device, or IOS device
+- Run the code to load app
 
 ## Documents:
 - [Planning Process](https://docs.google.com/document/d/1QkIRuPwOeApMIrEv3ZpS4wENnW4kmauSvvBNVV1rE9o/edit?usp=sharing)
