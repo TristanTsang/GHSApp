@@ -69,8 +69,8 @@ and the community
 - Must download Flutter, and Android Studio Emulator
 
 ## Documents:
-- Planning Process
-- Instructions
+- [Planning Process](https://docs.google.com/document/d/1QkIRuPwOeApMIrEv3ZpS4wENnW4kmauSvvBNVV1rE9o/edit?usp=sharing)
+- [Instructions](https://docs.google.com/document/d/1DtnKi1Hu3Hrjm6Vbw9U-qIs5BKAaSddTXIj2mfXXhxU/edit?usp=sharing)
 
 ## Main Pages
 - [Google Doc Link for Images](https://docs.google.com/document/d/1kpQf0o1e7XCUrF2RnwhCHL4oJUTxljHpULmnnKhzoDc/edit?usp=sharing)
