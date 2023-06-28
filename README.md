@@ -55,4 +55,4 @@ and the community
 ## Cloning of Project:
 - Must download Flutter, and Android Studio Emulator
 
-## Pages
+## Main Pages
