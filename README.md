@@ -1,4 +1,5 @@
 # **GHS School App**
+Android and IOS Compatible
 
 FBLA(Future Business Leader Association) Mobile App from Tristan Tsang and Srikar Erigineni at Glenelg High School
 
