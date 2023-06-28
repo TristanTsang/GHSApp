@@ -56,3 +56,4 @@ and the community
 - Must download Flutter, and Android Studio Emulator
 
 ## Pages
+![dog](https://github.com/TristanTsang/GHSApp/assets/115953863/0f52b957-f16a-4e39-a6ad-b4a97a34946d)
