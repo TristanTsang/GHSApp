@@ -18,6 +18,7 @@ and the community
 - Flutter - google's portable UI toolkit for crafting beautiful, natively compiled applications for mobile, web, and desktop from a single codebase
 - Android Studio - integrated development environment (IDE) for Android application development
 - Dart - programming language developed by Google
+- Google Firebase for account authentication and real time database storage
 
 ## Rubric:
 - Packaged with complete file, readme, and instructions
