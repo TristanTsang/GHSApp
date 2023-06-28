@@ -68,4 +68,7 @@ and the community
 ## Cloning of Project:
 - Must download Flutter, and Android Studio Emulator
 
+## Documents:
+- Planning Process
+- Instructions
 ## Main Pages
